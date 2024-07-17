@@ -1,7 +1,5 @@
 package it.ashyzan.image_upload.model;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,19 +14,19 @@ public class Images {
 
 	private String imageName;
 
-	private MultipartFile document;
+//	private MultipartFile document;
 
 	public int getId() {
 		return id;
 	}
 
-	public MultipartFile getDocument() {
-		return document;
-	}
-
-	public void setDocument(MultipartFile document) {
-		this.document = document;
-	}
+//	public MultipartFile getDocument() {
+//		return document;
+//	}
+//
+//	public void setDocument(MultipartFile document) {
+//		this.document = document;
+//	}
 
 	public void setId(int id) {
 		this.id = id;

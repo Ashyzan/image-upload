@@ -32,7 +32,7 @@ public class ImageUploadController {
 	}
 
 	@PostMapping("/imageUpload")
-	public String imageUpload(@RequestParam MultipartFile img, HttpSession session, ) {
+	public String imageUpload(@RequestParam MultipartFile img, HttpSession session) {
 
 		// System.out.println(img.getOriginalFilename());
 
