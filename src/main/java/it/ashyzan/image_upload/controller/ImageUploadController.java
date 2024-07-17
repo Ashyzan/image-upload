@@ -39,16 +39,26 @@ public class ImageUploadController {
 		Images im = new Images();
 		im.setImageName(img.getOriginalFilename());
 
+		// System.out.println(img.getOriginalFilename());
+
 		Images uploadImg = uploadRepo.save(im);
 
 		if (uploadImg != null) {
 
 			try {
-				File saveFile = new ClassPathResource("static/img").getFile();
+
+				// cambiare destinazione
+				File saveFile = new ClassPathResource("static/uploadsimg").getFile();
+
+				// System.out.println(saveFile);
 
 				Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + img.getOriginalFilename());
 
+				// System.out.println(path);
+
 				Files.copy(img.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+
+				// inserire istruzione salvare file url a db
 			}
 
 			catch (Exception e) {

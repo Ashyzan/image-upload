@@ -8,6 +8,10 @@
   </head>
   <body>
     <div>
+		<th:block th:if="${session.msg}">
+											<p class="text-center fs-4 text-success">[[${session.msg}]]</p>
+<!--											<th:block th:text="${#session.removeAttribute('msg')}"></th:block>-->
+										</th:block>
 
 		<div class="container px-4 text-center">
 		  <div class="row d-flex justify-content-center">
@@ -16,6 +20,9 @@
 				
 				<h3 class="mb-4">UPLOAD IMAGES</h3>	  
 					
+				
+				
+				
 				<form 
 				th:action="@{/imageUpload}"
 						enctype="multipart/form-data" method="post">
